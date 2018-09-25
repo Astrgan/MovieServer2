@@ -1,0 +1,49 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+.avatars img {
+    cursor: pointer;
+}
+.avatars img:hover {
+    opacity: 0.6;
+}
+.avatars a:hover {
+    text-decoration: none;
+}
+.filmt {
+    font-size: 14px;
+    line-height: 20px;
+    color: #999;
+}
+.p {
+    font-size: 40px;
+    line-height: 20px;
+    color: #999;
+}
+ul.list-of-string {
+    margin: 0;
+    padding: 1px;
+}
+ul.list-of-string li {
+    display: inline;
+    margin-right: 2px;
+    padding: 1px;
+}
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+h2 {
+    font-size: 12px;
+}
+a {
+    text-decoration: none;
+    color: #ffd700;
+}
+a:hover {
+    text-decoration: none;
+    color: #ff0;
+}
+.bold {
+    font-size: 12px;
+    font-weight: bold;
+}
