@@ -19,8 +19,6 @@
     <h:outputStylesheet library = "css" name = "component.css" />
     <h:outputStylesheet library = "css" name = "pagination.css" />
     <h:outputStylesheet library = "css" name = "player-page.css" />
-    <h:outputStylesheet library = "css" name = "comment.css" />
-
 
     <f:metadata>
         <f:viewParam name="page" value="#{filmCDI.currentPage}" />
@@ -87,16 +85,10 @@
             <div class="col-sm-9 pt-0">
                 <div class="row">
                     <div class="col-sm-12" id="outlet">
-                        <c:if test="${filmCDI.id == -1}">
-                            <c:forEach var="film" items="${filmCDI.films}">
-                                <my:card id = "${film.id}" filmName = "${film.name}" year = "${film.year}" countries = "${film.countries}" actors = "${film.actors}" genres = "${film.genres}" rating = "${film.rating}" filmPoster = "${film.poster}" writers = "${film.writers[0]}" description = "${film.description}"/>
-                            </c:forEach>
 
-                            <my:pagination></my:pagination>
-                        </c:if>
-                        <c:if test="${filmCDI.id !=-1}">
-                            <my:player-page></my:player-page>
-                        </c:if>
+                        <my:player-page></my:player-page>
+
+
 
                     </div>
                 </div>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:my="http://gebruder.tk/facelets">
+
+
+    <div class="row mx-auto pt-3">
+        <div class="col-md-12 bg-dark text-white pt-3">
+            <h1>#{filmCDI.film.name}</h1>
+            <div class="col-md-12 bg-dark text-white pt-3 text-center">
+                <iframe src="#{filmCDI.film.path}" width="100%" height="350" frameborder="0" allowfullscreen="true"></iframe>
+            </div>
+
+        <!--<div class="row mx-auto ">-->
+            <!--<div class="col-md-12 bg-dark text-white pt-3 text-center">-->
+                <!--<a href="https://www.facebook.com/sharer/sharer.php?u=gebruder.tk" target="_blank" class="buttonc facebook"><span><i class="fa fa-facebook"></i></span><p>Facebook</p></a>-->
+
+                <!--<a href="http://vk.com/share.php?url=gebruder.tk&title={{film.name}}&image=[IMAGE]&noparse=true" target="_blank" class="buttonc vkontakte"><span><i class="fa fa-vk"></i></span><p>Вконтакте</p></a>-->
+
+                <!--<a href="https://plus.google.com/share?url=gebruder.tk" target="_blank" class="buttonc google-plus"><span><i class="fa fa-google-plus"></i></span><p>Google +</p></a>-->
+
+                <!--<a href="http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st._surl=gebruder.tk&st.comments={{film.name}}" target="_blank" class="buttonc odnoklassniki"><span><i class="fa fa-odnoklassniki"></i></span><p>Одноклассники</p></a>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div class="col-md-12 bg-dark d">
+            <ul class="nav flex-column bg-dark bold">
+                <ul class="list-of-string">
+                    <li class="nav-item">
+                        Год выпуска: #{filmCDI.film.year}
+                    </li>
+                </ul>
+                <li class="nav-item">
+                    <ul class="list-of-string">
+                        <li>Страны:</li>
+                        <c:forEach items="${filmCDI.film.countries}" var="country">
+                            <li><a>${country}</a></li>
+                        </c:forEach>
+                        <!--<li *ngFor="let country of film.countries"> <a [routerLink]="" (click)="searchCountry($event, country)">{{country}}</a> </li>-->
+            </ul>
+        </li>
+        <li class="nav-item">
+            <ul class="list-of-string">
+                <li>Жанры:</li>
+                <c:forEach items="${filmCDI.film.genres}" var="genre">
+                    <li><a>${genre}</a></li>
+                </c:forEach>
+                <!--<li *ngFor="let genre of film.genres"> <a [routerLink]="" (click)="searchGenre($event, genre)">{{genre}}</a> </li>-->
+            </ul>
+        </li>
+        <ul class="list-of-string">
+            <li class="nav-item">
+                Режиссер: ${filmCDI.film.writers[0]}
+            </li>
+        </ul>
+        <ul class="list-of-string">
+            <li class="nav-item">
+                Рейтинг: ${filmCDI.film.rating}
+            </li>
+
+        </ul>
+        <li class="nav-item">
+            <ul class="list-of-string">
+                <li>Актеры:</li>
+                <c:forEach items="${filmCDI.film.actors}" var="actor">
+                    <li><a>${actor}</a></li>
+                </c:forEach>
+                <!--<li *ngFor="let actor of film.actors"> <a [routerLink]="" (click)="searchActor($event, actor)">{{actor}}</a> </li>--></ul>
+        </li>
+
+                </ul>
+        <div class=" my-2 bg-dark">
+            ${filmCDI.film.description}
+        </div>
+                </div>
+                </div>
+        <div class="col-md-12 text-white">
+        <div class="row my-3">
+            <div class="col-md-12 bg-dark text-white p-3">
+                <!--<p-messages [(value)]="msgs"></p-messages>-->
+            <label for="exampleFormControlTextarea1">Комментарии: </label>
+            <div class="row p-3">
+                <!--<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="comment"></textarea>-->
+        </div>
+        <!--<div class="row p-3">-->
+            <!--<a class="btn btn-danger" (click)="Commenting()">Отправить</a>-->
+        <!--</div>-->
+        <!--<app-comment *ngFor="let comment of film.comments" [comment]="comment"></app-comment>-->
+                <c:forEach items="${filmCDI.film.comments}" var="comment">
+                    <my:comment name = "${comment.name}" comment = "${comment.comment}"></my:comment>
+                </c:forEach>
+                </div>
+                </div>
+                </div>
+                </div>
+
+
+</html>

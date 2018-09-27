@@ -13,4 +13,14 @@
         <tag-name>pagination</tag-name>
         <source>../movies/pagination.xhtml</source>
     </tag>
+
+    <tag>
+        <tag-name>player-page</tag-name>
+        <source>../movies/player-page.xhtml</source>
+    </tag>
+
+    <tag>
+        <tag-name>comment</tag-name>
+        <source>../user/comment.xhtml</source>
+    </tag>
 </facelet-taglib>

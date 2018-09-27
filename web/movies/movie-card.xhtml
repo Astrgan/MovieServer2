@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
 
 <div class="row my-3 mx-auto bg-dark">
         <div class="col-md-12 bg-dark text-white pt-3">
@@ -17,7 +17,7 @@
                 <img alt="#{filmName}" src="#{filmPoster}" class="card-img-top rounded" />
             </a>
             <div class=" bg-dark p-3">
-                <a href="#{link}" class="btn btn-danger btn-block text-white">Смотреть</a>
+                <a href="http://localhost:8080/MovieServer_war_exploded/index.xhtml?id=#{id}" class="btn btn-danger btn-block text-white">Смотреть</a>
             </div>
         </div>
 
@@ -33,13 +33,19 @@
                         </ul>
                         <li class="nav-item">
                             <ul class="list-of-string">
-                                <li>#{country}</li>
+                                <li>Страны: </li>
+                                <c:forEach items="${countries}" var="country">
+                                    <li><a>${country}</a></li>
+                                </c:forEach>
                                 <!--<li *ngFor="let country of film.countries"> <a [routerLink]="" (click)="searchCountry($event, country)">{{country}}</a> </li>-->
                             </ul>
                         </li>
                         <li class="nav-item">
                             <ul class="list-of-string">
                                 <li>Жанры:</li>
+                                <c:forEach items="${genres}" var="genre">
+                                    <li><a>${genre}</a></li>
+                                </c:forEach>
                             <!--<li *ngFor="let genre of film.genres"> <a [routerLink]="" (click)="searchGenre($event, genre)">{{genre}}</a> </li>-->
                             </ul>
                         </li>
@@ -56,6 +62,9 @@
                         <li class="nav-item">
                             <ul class="list-of-string">
                                 <li>Актеры:</li>
+                                <c:forEach items="${actors}" var="actor">
+                                    <li><a>${actor}</a></li>
+                                </c:forEach>
                                 <!--<li *ngFor="let actor of film.actors"> <a [routerLink]="" (click)="searchActor($event, actor)">{{actor}}</a> </li></ul>-->
                             </ul>
                         </li>

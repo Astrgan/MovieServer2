@@ -22,10 +22,11 @@ import java.util.List;
 public class FilmCDI {
 
     Film filmFilter = new Film();
+    Film film;
     List<Film> films;
     Lists lists;
     int year = 2018;
-
+    int id = -1;
     int currentPage = 1;
 
     String genre="все";
@@ -38,7 +39,7 @@ public class FilmCDI {
     double pages;
 
     int length = 8;
-    private int numSelector = 3;
+    private int numSelector = 6;
 
     @PostConstruct
     void init(){
@@ -47,6 +48,11 @@ public class FilmCDI {
 
     public void reInit(){
         System.out.println("reInit");
+        System.out.println("id: " + id);
+        if(id > 0) {
+            getFilmFromPlayer();
+            return;
+        }
         filmFilter.year = year;
         filmFilter.genres = new String[] {genre};
         films = getFilms(filmFilter);
@@ -59,8 +65,29 @@ public class FilmCDI {
             numbers.add(i);
     }
 
+    public void getFilmFromPlayer(){
+        filmFilter.id = id;
+        film = getFilms(filmFilter).get(0);
+    }
+
     public String getGenre() {
         return genre;
+    }
+
+    public Film getFilm() {
+        return film;
+    }
+
+    public void setFilm(Film film) {
+        this.film = film;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setGenre(String genre) {
