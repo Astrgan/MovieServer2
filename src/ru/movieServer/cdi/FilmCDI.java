@@ -40,21 +40,22 @@ public class FilmCDI {
     int length = 8;
     private int numSelector = 3;
 
-//    @PostConstruct
-//    void init(){
-//
-//    }
+    @PostConstruct
+    void init(){
+
+    }
 
     public void reInit(){
         System.out.println("reInit");
-        filmFilter.year = 2018;
+        filmFilter.year = year;
         filmFilter.genres = new String[] {genre};
         films = getFilms(filmFilter);
         pages = Math.ceil(this.films.size() / this.numSelector);
         int began = (int)biganPages();
+        int endListFilms = ((currentPage - 1) * numSelector) + (numSelector);
         System.out.println("currentPage" + currentPage);
-        films = films.subList(((currentPage - 1) * numSelector), ((currentPage - 1) * numSelector) + (numSelector));
-        for (int i = began; i < began+length; i++)
+        films = films.subList(((currentPage - 1) * numSelector), films.size()<endListFilms?films.size():endListFilms);
+        for (int i = began; i < began+length & i <= pages; i++)
             numbers.add(i);
     }
 
