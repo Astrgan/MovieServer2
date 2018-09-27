@@ -17,7 +17,7 @@
                 <img alt="#{filmName}" src="#{filmPoster}" class="card-img-top rounded" />
             </a>
             <div class=" bg-dark p-3">
-                <a href="http://localhost:8080/MovieServer_war_exploded/index.xhtml?id=#{id}" class="btn btn-danger btn-block text-white">Смотреть</a>
+                <a href="http://#{filmCDI.host}:#{filmCDI.port}/MovieServer_war/index.xhtml?id=#{id}" class="btn btn-danger btn-block text-white">Смотреть</a>
             </div>
         </div>
 

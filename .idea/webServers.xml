@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="15f781da-185d-4677-a233-07062128480e" name="gebruder.tk" url="http://gebruder.tk/MovieServer_war_exploded">
+        <fileTransfer host="gebruder.tk" port="22" rootFolder="/opt/wildfly-12.0.0.Final" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

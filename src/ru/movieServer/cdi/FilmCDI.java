@@ -11,8 +11,12 @@ import javax.enterprise.context.Dependent;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.servlet.http.HttpServletRequest;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +32,8 @@ public class FilmCDI {
     int year = 2018;
     int id = -1;
     int currentPage = 1;
-
+    String host = "gebruder.tk";
+    String port = "80";
     String genre="все";
     ArrayList<Integer> numbers = new ArrayList<>();
 
@@ -43,7 +48,19 @@ public class FilmCDI {
 
     @PostConstruct
     void init(){
+//        HttpServletRequest origRequest = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
+//        host = origRequest.getServerName();
+//        port = Integer.toString(origRequest.getLocalPort());
+//        System.out.println("url"+ port);
 
+    }
+
+    public String getHost() {
+        return host;
+    }
+
+    public String getPort() {
+        return port;
     }
 
     public void reInit(){
@@ -113,7 +130,7 @@ public class FilmCDI {
     }
 
     public ArrayList<Integer> getNumbers() {
-        System.out.println("numbers size" + numbers.size());
+//        System.out.println("numbers size" + numbers.size());
         return numbers;
     }
     public Lists getLists() {
@@ -152,7 +169,7 @@ public class FilmCDI {
         System.out.println(filmFilter.id);
         System.out.println(filmFilter.year);
 
-        return dbConnection.getFilms(filmFilter, "HOST!!!!!!!");
+        return dbConnection.getFilms(filmFilter, host);
 
     }
 

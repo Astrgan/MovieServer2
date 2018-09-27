@@ -75,11 +75,11 @@
             <div class="col-sm-3 pt-3 sidebar-nav d-none d-lg-block bold"> <!-- d-none d-lg-block - эти классы сккрывают блок div на маленьком экране-->
                 <ul class="nav flex-column bg-dark p-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:8080/MovieServer_war_exploded/?page=1&amp;genre=все&amp;year=#{0}"><i class="fa fa-film text-danger"></i>&nbsp;&nbsp;Все</a>
+                        <a class="nav-link" href="http://#{filmCDI.host}:#{filmCDI.port}/MovieServer_war/?page=1&amp;genre=все&amp;year=#{0}"><i class="fa fa-film text-danger"></i>&nbsp;&nbsp;Все</a>
                     </li>
                     <c:forEach var="genre" items="${filmCDI.lists.jsonAllGenres}">
                         <li class="nav-item">
-                            <a  class="nav-link" href="http://localhost:8080/MovieServer_war_exploded/?page=1&amp;genre=${genre}&amp;year=#{0}"><i class="fa fa-film text-danger"></i>&nbsp;&nbsp;${genre}</a>
+                            <a  class="nav-link" href="http://#{filmCDI.host}:#{filmCDI.port}/MovieServer_war/?page=1&amp;genre=${genre}&amp;year=#{0}"><i class="fa fa-film text-danger"></i>&nbsp;&nbsp;${genre}</a>
                         </li>
                     </c:forEach>
                 </ul>

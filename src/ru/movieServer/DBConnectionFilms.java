@@ -43,7 +43,7 @@ public class DBConnectionFilms {
 	        	Film film = new Film();
 	        	film.id = rs.getInt("id_film");
 	            film.name = rs.getString("name_film");
-	            film.poster = rs.getString("poster");
+	            film.poster = "http://"+host+rs.getString("poster");
 	            film.description = rs.getString("description");
 	            film.year = rs.getInt("year_of_release");
 	            film.rating = rs.getDouble("rating");

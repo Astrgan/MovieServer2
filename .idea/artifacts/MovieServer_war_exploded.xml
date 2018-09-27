@@ -2,12 +2,12 @@
   <artifact type="exploded-war" name="MovieServer:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/MovieServer_war_exploded</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="MovieServer/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="MovieServer" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="MovieServer/web/Web" />
     </root>
   </artifact>
 </component>

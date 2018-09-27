@@ -14,7 +14,7 @@
                 <c:forEach items="#{filmCDI.numbers}" var="number">
                     <li class="page-item #{number == filmCDI.currentPage-1?'active':''}">
                         <c:if test = "${number != filmCDI.currentPage-1}">
-                            <a href="http://localhost:8080/MovieServer_war_exploded/?page=#{number+1}&amp;genre=#{filmCDI.genre}&amp;year=#{filmCDI.year}" class="page-link">
+                            <a href="http://#{filmCDI.host}:#{filmCDI.port}/MovieServer_war/?page=#{number+1}&amp;genre=#{filmCDI.genre}&amp;year=#{filmCDI.year}" class="page-link">
                                 #{number+1}
                             </a>
                         </c:if>
