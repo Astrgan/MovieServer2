@@ -128,7 +128,7 @@ public class DBConnectionFilms {
 
 
 		builder.append(" order by films.year_of_release DESC");
-		
+		if(!filmFilter.limit.equals("0")) builder.append(" LIMIT " + filmFilter.limit);
 		System.out.println(builder.toString());
 		
 		return builder.toString();
