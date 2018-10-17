@@ -24,7 +24,7 @@ import java.util.List;
 @RequestScoped
 
 public class FilmCDI {
-
+    String shortSubscription;
     Film filmFilter = new Film();
     Film film;
     List<Film> films;
@@ -48,10 +48,11 @@ public class FilmCDI {
 
     @PostConstruct
     void init(){
-//        HttpServletRequest origRequest = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
-//        host = origRequest.getServerName();
+        HttpServletRequest origRequest = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
+        host = origRequest.getServerName();
 //        port = Integer.toString(origRequest.getLocalPort());
-//        System.out.println("url"+ port);
+        port = "80";
+        System.out.println("url"+ port);
 
     }
 
@@ -85,6 +86,11 @@ public class FilmCDI {
     public void getFilmFromPlayer(){
         filmFilter.id = id;
         film = getFilms(filmFilter).get(0);
+        shortSubscription = film.description.substring(0, film.description.length() < 150?film.description.length(): 150);
+    }
+
+    public String getShortSubscription() {
+        return shortSubscription;
     }
 
     public String getGenre() {

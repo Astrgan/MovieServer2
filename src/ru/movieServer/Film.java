@@ -10,6 +10,7 @@ import ru.movieServer.users.Comment;
 @XmlRootElement
 public class Film {
 
+	@XmlElement public String host;
 	@XmlElement public String limit = "0";
 	@XmlElement public int id;
 	@XmlElement public int year;

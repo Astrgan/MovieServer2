@@ -18,7 +18,7 @@ public class WebSocket {
         System.out.println("json: " + filmFilterJSON);
         Gson gson = new Gson();
         Film filmFilter = gson.fromJson(filmFilterJSON, Film.class);
-        return gson.toJson(dbConnection.getFilms(filmFilter, "gebruder.tk"));
+        return gson.toJson(dbConnection.getFilms(filmFilter, filmFilter.host));
 
     }
 }

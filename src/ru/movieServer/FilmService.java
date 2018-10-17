@@ -21,8 +21,8 @@ public class FilmService {
 	DBConnectionFilms dbConnection;
 	@EJB
 	ListAllFilms listAllFilms; 
-//	@Context
-//	UriInfo uri;
+	@Context
+	UriInfo uri;
 		
 	@Consumes("application/json")
 	@Produces({"application/json"})
@@ -42,8 +42,8 @@ public class FilmService {
 		System.out.println(filmFilter.id);
 		System.out.println(filmFilter.year);
 		
-//		return dbConnection.getFilms(filmFilter, uri.getBaseUri().getHost());
-		return dbConnection.getFilms(filmFilter, "gebruder.tk");
+		return dbConnection.getFilms(filmFilter, uri.getBaseUri().getHost());
+//		return dbConnection.getFilms(filmFilter, "gebruder.tk");
 
 	}
 
